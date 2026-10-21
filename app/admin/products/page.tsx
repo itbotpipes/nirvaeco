@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { Pencil, Plus } from "lucide-react";
+import { AdminShell } from "@/components/admin/admin-shell";
+import { requireAdmin } from "@/lib/auth/session";
+import { getAllProducts } from "@/services/products";
+export default async function AdminProducts(){const user=await requireAdmin();const products=await getAllProducts();return <AdminShell email={user.email}><div className="admin-heading"><div><p className="mini-label">Catalogue</p><h1>Products</h1><p>Published products appear on the public catalogue. Drafts stay private.</p></div><Link href="/admin/products/new" className="button"><Plus size={18}/>New product</Link></div><div className="admin-table"><div className="admin-table-head"><span>Product</span><span>Category</span><span>Status</span><span>Order</span><span/></div>{products.map(product=><div className="admin-table-row" key={product.id}><strong>{product.name}<small>/{product.slug}</small></strong><span>{product.categoryName}</span><span><i className={`status status-${product.status}`}>{product.status}</i></span><span>{product.sortOrder}</span><Link aria-label={`Edit ${product.name}`} href={`/admin/products/${product.id}/edit`}><Pencil size={17}/></Link></div>)}</div></AdminShell>}

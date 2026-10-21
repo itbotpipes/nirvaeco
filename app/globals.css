@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-manrope: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --forest: #173826;
+    --forest-hover: #1f4d34;
+    --forest-dark: #0f2619;
+    --sage: #4d7c57;
+    --sage-light: #eaf1e8;
+    --sage-border: #d4e0d1;
+    --ivory: #faf8f5;
+    --ivory-dark: #f3f0e9;
+    --stone: #ebe6dc;
+    --charcoal: #1c241e;
+    --muted: #667065;
+    --border: #e8e3d8;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-manrope);
+    background-color: var(--ivory);
+    color: var(--charcoal);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: var(--font-manrope);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Base custom classes */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: #173826;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  z-index: 99999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
