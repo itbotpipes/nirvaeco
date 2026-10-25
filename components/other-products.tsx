@@ -40,7 +40,7 @@ const products = [
 
 export function OtherProducts() {
   return (
-    <section id="products-range" className="py-20 md:py-28 bg-[#faf8f5] border-t border-[#eae5da]" aria-labelledby="range-title">
+    <section id="products-range" className="py-20 md:py-28 bg-white border-t border-[#eae5da]" aria-labelledby="range-title">
       <div className="container">
         {/* Header with Title and View All / Carousel Arrows */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -109,29 +109,16 @@ export function OtherProducts() {
                   {prod.desc}
                 </p>
 
-                {/* Available Variants */}
-                <div className="pt-4 border-t border-[#f0ede6] mt-auto">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#79887b] block mb-2.5">
-                    Available Variants
-                  </span>
-                  <div className="space-y-1.5 mb-6">
-                    {prod.variants.map((v, i) => (
-                      <div key={i} className="flex items-center justify-between text-xs text-[#3a453c]">
-                        <span className="font-medium">{v.size}</span>
-                        {v.dim && <span className="text-[#79887b]">{v.dim}</span>}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Card CTA */}
-                <Link
-                  href={prod.href}
-                  className="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#173826] hover:text-[#3e684a] transition-colors group/link mt-1"
-                >
-                  View Product
-                  <ArrowUpRight size={14} className="stroke-[2.5] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                </Link>
+                <div className="pt-4 mt-auto">
+                  <Link
+                    href={prod.href}
+                    className="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#173826] hover:text-[#3e684a] transition-colors group/link"
+                  >
+                    View Product
+                    <ArrowUpRight size={14} className="stroke-[2.5] transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

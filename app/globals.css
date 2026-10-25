@@ -9,9 +9,9 @@
     --sage: #4d7c57;
     --sage-light: #eaf1e8;
     --sage-border: #d4e0d1;
-    --ivory: #faf8f5;
-    --ivory-dark: #f3f0e9;
-    --stone: #ebe6dc;
+    --ivory: #ffffff;
+    --ivory-dark: #f8f6f2;
+    --stone: #f0ebe1;
     --charcoal: #1c241e;
     --muted: #667065;
     --border: #e8e3d8;
@@ -24,7 +24,7 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-manrope);
-    background-color: var(--ivory);
+    background-color: #ffffff;
     color: var(--charcoal);
   }
 

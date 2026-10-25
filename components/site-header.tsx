@@ -38,7 +38,7 @@ export function SiteHeader() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || !isHome
-          ? "bg-[#faf8f5]/90 backdrop-blur-md shadow-xs border-b border-[#e8e3d8]/80 py-3.5"
+          ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-[#e8e3d8]/80 py-3.5"
           : "bg-transparent py-5"
       }`}
     >
@@ -97,7 +97,7 @@ export function SiteHeader() {
 
       {/* Mobile Drawer */}
       {open && (
-        <div className="md:hidden fixed inset-x-0 top-full bg-[#faf8f5] border-b border-[#e8e3d8] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden fixed inset-x-0 top-full bg-white border-b border-[#e8e3d8] px-6 py-6 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <Link

@@ -13,7 +13,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[92vh] md:min-h-screen flex items-center pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-[#faf8f5]">
+    <section className="relative min-h-[92vh] md:min-h-screen flex items-center pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-white">
       {/* Editorial Photographic Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -25,7 +25,7 @@ export function HeroSection() {
           className="object-cover object-[center_right] md:object-center select-none"
         />
         {/* Subtle gradient vignette to preserve contrast for left typography on smaller screens */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#faf8f5]/85 via-[#faf8f5]/40 to-transparent md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent md:hidden" />
       </div>
 
       <div className="container relative z-10 w-full">
@@ -62,20 +62,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Scroll Indicator at bottom right */}
-        <div className="absolute right-4 sm:right-8 bottom-2 md:bottom-4 hidden sm:flex flex-col items-center gap-2">
-          <span className="text-[11px] uppercase tracking-[0.14em] text-[#556254] font-medium">
-            Scroll to Explore
-          </span>
-          <button
-            type="button"
-            onClick={scrollToNext}
-            className="w-9 h-9 rounded-full bg-white/95 text-[#173826] flex items-center justify-center shadow-md hover:bg-white hover:scale-105 transition-all duration-200 border border-[#e2ddd3]"
-            aria-label="Scroll to explore"
-          >
-            <ArrowDown size={15} className="stroke-[2.5]" />
-          </button>
-        </div>
+        
       </div>
     </section>
   );

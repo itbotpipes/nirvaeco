@@ -25,7 +25,7 @@ const highlights = [
 
 export function StatsSection() {
   return (
-    <section className="py-12 md:py-16 bg-[#faf8f5] border-y border-[#eae5da]" aria-label="Product Highlights">
+    <section className="py-12 md:py-16 bg-white border-y border-[#eae5da]" aria-label="Product Highlights">
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#e6e0d4]">
           {highlights.map((item, idx) => {

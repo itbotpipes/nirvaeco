@@ -33,7 +33,7 @@ export function TestimonialsSection() {
   const current = testimonials[index];
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#faf8f5] border-t border-[#eae5da] overflow-hidden" aria-labelledby="testi-title">
+    <section className="relative py-20 md:py-28 bg-white border-t border-[#eae5da] overflow-hidden" aria-labelledby="testi-title">
       {/* Decorative leaf branch accent on right edge */}
       <div className="absolute right-[-40px] top-1/2 -translate-y-1/2 w-64 md:w-80 h-80 pointer-events-none opacity-20 hidden lg:block select-none">
         <Image

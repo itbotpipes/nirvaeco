@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const faqs = [
   {
@@ -14,77 +14,84 @@ const faqs = [
   },
   {
     q: "Can these products be used in the microwave or freezer?",
-    a: "Yes. NirvaEco tableware is tested for microwave reheating and refrigerator/freezer food storage under standard commercial food-service conditions.",
+    a: "Yes. NirvaEco tableware is tested for microwave reheating and refrigerator/freezer food storage under standard commercial food-service conditions (-20°C to 120°C).",
   },
   {
-    q: "Are they biodegradable?",
+    q: "Are they biodegradable and compostable?",
     a: "Yes. Made purely from renewable sugarcane plant fibers with no conventional plastic lining, our tableware naturally decomposes into organic compost under commercial composting environments.",
   },
   {
-    q: "What are the main applications?",
+    q: "What are the primary applications?",
     a: "Our clamshells and lids are engineered for food delivery, takeaway meals, cloud kitchens, corporate cafeterias, catering events, and quick-service restaurants.",
   },
   {
-    q: "Can I request custom products?",
-    a: "Yes. We support custom sizing, bulk pallet orders, and OEM/custom supply requirements for commercial food-service and distribution partners.",
+    q: "Can I request custom specifications or bulk orders?",
+    a: "Yes. We support custom sizing, bulk pallet orders, and OEM contract supply requirements for commercial food-service and distribution partners.",
   },
 ];
 
 export function FaqsSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const toggle = (idx: number) => {
     setOpenIndex((curr) => (curr === idx ? null : idx));
   };
 
   return (
-    <section id="faqs" className="py-20 md:py-28 bg-[#faf8f5] border-t border-[#eae5da]" aria-labelledby="faqs-title">
+    <section id="faqs" className="py-20 md:py-28 bg-white" aria-labelledby="faqs-title">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Left Column: Heading & Subtitle */}
           <div className="lg:col-span-5 max-w-md">
-            <span className="text-[11px] md:text-xs font-bold tracking-[0.16em] uppercase text-[#3e684a] block mb-3">
-              Frequently Asked Questions
-            </span>
-            <h2 id="faqs-title" className="text-3xl sm:text-4xl md:text-[40px] font-semibold tracking-[-0.03em] text-[#1a201c] leading-[1.14] mb-4">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="w-4 h-[1.5px] bg-[#3e684a]" aria-hidden="true" />
+              <span className="text-[11px] md:text-xs font-bold tracking-[0.16em] uppercase text-[#3e684a]">
+                Frequently Asked Questions
+              </span>
+            </div>
+
+            <h2 id="faqs-title" className="text-3xl sm:text-4xl md:text-[42px] font-semibold tracking-[-0.03em] text-[#1a201c] leading-[1.12] mb-4">
               Your Questions,
               <br />
               Answered.
             </h2>
+
             <p className="text-[15px] text-[#525f54] leading-relaxed font-normal">
-              Find answers to common questions about our bagasse packaging, applications, and sustainability.
+              Everything you need to know about sugarcane bagasse, thermal performance, food contact safety, and commercial bulk supply.
             </p>
           </div>
 
-          {/* Right Column: Clean Accordion List */}
-          <div className="lg:col-span-7 space-y-3">
+          {/* Right Column: Premium Minimal Accordion (Borderless & Clean) */}
+          <div className="lg:col-span-7 divide-y divide-[#e8e2d4]/70">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
-                <div
-                  key={faq.q}
-                  className="bg-white rounded-xl border border-[#ede9e2] overflow-hidden shadow-xs transition-colors"
-                >
+                <div key={faq.q} className="py-5 sm:py-6 first:pt-0 last:pb-0">
                   <button
                     type="button"
                     onClick={() => toggle(idx)}
-                    className="w-full text-left px-5 sm:px-6 py-4 sm:py-4.5 flex items-center justify-between gap-4 hover:bg-[#faf9f6] transition-colors"
+                    className="w-full text-left flex items-start justify-between gap-6 cursor-pointer group"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-[14.5px] sm:text-[15px] font-semibold text-[#1c241e]">
+                    <span className={`text-[15px] sm:text-base font-semibold tracking-[-0.01em] transition-colors ${
+                      isOpen ? "text-[#173826]" : "text-[#1c241e] group-hover:text-[#3e684a]"
+                    }`}>
                       {faq.q}
                     </span>
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[#637064]">
-                      {isOpen ? (
-                        <Minus size={15} className="stroke-[2.5]" />
-                      ) : (
-                        <Plus size={15} className="stroke-[2.5]" />
-                      )}
-                    </div>
+                    <span
+                      className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 mt-0.5 ${
+                        isOpen
+                          ? "bg-[#173826] text-white rotate-45 shadow-xs"
+                          : "bg-[#ece7dc] text-[#556356] group-hover:bg-[#e0d9cc]"
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <Plus size={15} className="stroke-[2.2]" />
+                    </span>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-5 pt-1 text-[13.5px] sm:text-[14px] text-[#586459] leading-relaxed border-t border-[#f2eee7]">
+                    <div className="pt-3 pr-8 text-[14px] sm:text-[14.5px] text-[#525f54] leading-relaxed font-normal animate-fadeIn">
                       {faq.a}
                     </div>
                   )}

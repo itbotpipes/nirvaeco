@@ -55,7 +55,7 @@ const organizationSchema = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body className="font-sans bg-[#faf8f5] text-[#1c241e] antialiased">
+      <body className="font-sans bg-white text-[#1c241e] antialiased">
         <a className="skip-link" href="#main">
           Skip to content
         </a>

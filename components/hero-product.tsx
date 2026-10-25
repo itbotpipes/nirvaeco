@@ -1,95 +1,130 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check, Plus, Leaf } from "lucide-react";
+import { ArrowUpRight, Layers, ShieldCheck, ThermometerSnowflake, Box } from "lucide-react";
 
 export function HeroProduct() {
-  const benefits = [
-    "Plant-based bagasse fiber",
-    "Strong and durable",
-    "Suitable for hot and cold foods",
-  ];
-
   return (
-    <section id="featured-product" className="py-20 md:py-28 bg-[#faf8f5] overflow-hidden">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Details */}
-          <div className="lg:col-span-5 max-w-lg">
-            <span className="text-[11px] md:text-xs font-bold tracking-[0.16em] uppercase text-[#3e684a] block mb-3">
-              Featured Product
+    <section
+      id="featured-product"
+      className="py-10 md:py-14 lg:py-12 bg-white overflow-hidden border-b border-[#eae5da]"
+      aria-label="3-Compartment Clamshell Featured Spotlight"
+    >
+      <div className="container max-w-6xl">
+        {/* Centered Compact Top Header */}
+        <div className="max-w-3xl mx-auto text-center mb-6 lg:mb-8">
+          <div className="inline-flex items-center justify-center gap-2 mb-2">
+            <span className="w-4 h-[1.5px] bg-[#3e684a]" aria-hidden="true" />
+            <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#3e684a]">
+              Featured Product · Flagship Format
             </span>
-
-            <h2 className="text-3xl sm:text-4xl md:text-[42px] font-semibold tracking-[-0.03em] text-[#1a201c] leading-[1.12] mb-4">
-              3-Compartment Clamshell
-            </h2>
-
-            <p className="text-[15px] sm:text-base text-[#525f54] leading-relaxed mb-6 font-normal">
-              A practical, plant-based solution for complete meals. Designed for food-service and takeaway applications.
-            </p>
-
-            {/* Supported Benefits List */}
-            <div className="space-y-3 mb-8">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#527e5c] text-white flex items-center justify-center shrink-0">
-                    <Check size={12} className="stroke-[3]" />
-                  </div>
-                  <span className="text-[14.5px] font-medium text-[#2d382f]">
-                    {benefit}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Button */}
-            <Link
-              href="/products/three-compartment-clamshell-boxes"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#173826] text-white text-sm font-semibold hover:bg-[#1f4d34] transition-all duration-200 shadow-md group"
-            >
-              View Product Details
-              <ArrowUpRight size={15} className="stroke-[2.5] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            <span className="w-4 h-[1.5px] bg-[#3e684a]" aria-hidden="true" />
           </div>
 
-          {/* Right Product Spotlight Composition */}
-          <div className="lg:col-span-7 relative flex items-center justify-center lg:justify-end">
-            {/* Soft Organic Sage Backdrop Pill Shape */}
-            <div className="relative w-full max-w-[540px] aspect-[16/11] rounded-[36px] overflow-hidden bg-gradient-to-br from-[#f4f2ec] via-[#edf3ea] to-[#739564] shadow-md flex items-center justify-center p-6 sm:p-10">
-              {/* Product Photograph */}
-              <div className="relative w-full h-full flex items-center justify-center">
-                <Image
-                  src="/images/three-compartment-clamshell.png"
-                  alt="NIRVAECO 3-Compartment Sugarcane Bagasse Clamshell"
-                  width={620}
-                  height={450}
-                  className="object-contain max-h-[95%] drop-shadow-2xl transition-transform duration-500 hover:scale-[1.03]"
-                />
+          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-semibold tracking-[-0.03em] text-[#1a201c] leading-tight mb-2">
+            The 3-Compartment Clamshell
+          </h2>
+
+          <p className="text-xs sm:text-sm lg:text-[14.5px] text-[#525f54] leading-relaxed max-w-xl mx-auto font-normal">
+            High-walled separation keeps multi-course meals clean, crisp, and fresh in a 100% plant-based sugarcane bagasse format.
+          </p>
+        </div>
+
+        {/* 3-Column Spotlight: Left Specs | Center Native 4:3 Product Showcase | Right Specs & CTA */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          {/* Left Wing (2 Key Specifications) */}
+          <div className="lg:col-span-3 space-y-5 order-2 lg:order-1">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#e8eee4] text-[#3e684a] flex items-center justify-center shrink-0 mt-0.5">
+                <Layers size={16} className="stroke-[2.2]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#1a201c] leading-snug">
+                  Triple Partition Mold
+                </h3>
+                <p className="text-xs text-[#637064] leading-relaxed mt-0.5">
+                  High-walled dividers prevent sauce and liquid migration between chambers during delivery.
+                </p>
               </div>
             </div>
 
-            {/* Connecting Plus Badge */}
-            <div className="hidden sm:flex absolute right-[18%] lg:right-[15%] top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white shadow-lg border border-[#e6e1d6] items-center justify-center text-[#3e684a]">
-              <Plus size={16} className="stroke-[2.5]" />
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#e8eee4] text-[#3e684a] flex items-center justify-center shrink-0 mt-0.5">
+                <ShieldCheck size={16} className="stroke-[2.2]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#1a201c] leading-snug">
+                  Oil & Grease Barrier
+                </h3>
+                <p className="text-xs text-[#637064] leading-relaxed mt-0.5">
+                  Naturally dense sugarcane fibers repel hot sauces and oils without any plastic lining.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Center Product Showcase (Native 4:3 Aspect Ratio - Full Product Visible) */}
+          <div className="lg:col-span-6 flex justify-center order-1 lg:order-2">
+            <div className="relative w-full max-w-[480px] aspect-[4/3] rounded-2xl lg:rounded-3xl overflow-hidden bg-[#f0ebe1] border border-[#e8e2d4] shadow-sm">
+              <Image
+                src="/images/three-comp-card.jpg"
+                alt="NIRVAECO 3-Compartment sugarcane bagasse clamshell container on natural stone surface"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 480px"
+                className="object-cover object-center transition-transform duration-700 hover:scale-[1.015]"
+              />
+
+              {/* Floating Pill Tag at bottom */}
+              <div className="absolute bottom-3 left-3 right-3 sm:right-auto sm:bottom-4 sm:left-4 z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/60 shadow-xs text-[11px] sm:text-xs font-semibold text-[#1a201c]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#3e684a]" />
+                  <span>100% Sugarcane Bagasse · Plastic-Free</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Wing (Thermal Spec, Formats & CTA Button) */}
+          <div className="lg:col-span-3 space-y-5 order-3">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#e8eee4] text-[#3e684a] flex items-center justify-center shrink-0 mt-0.5">
+                <ThermometerSnowflake size={16} className="stroke-[2.2]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#1a201c] leading-snug">
+                  -20°C to 120°C Rated
+                </h3>
+                <p className="text-xs text-[#637064] leading-relaxed mt-0.5">
+                  Microwave reheat safe and freezer stable for prepared commissary meals and takeaway.
+                </p>
+              </div>
             </div>
 
-            {/* Natural Bagasse Fiber Thumbnail Card */}
-            <div className="hidden sm:block absolute -right-2 lg:-right-4 top-1/2 -translate-y-1/2 z-10 w-36 bg-white rounded-2xl p-2.5 shadow-xl border border-[#ece7dc] transition-transform duration-300 hover:scale-105">
-              <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-2 bg-[#f4f1ea]">
-                <Image
-                  src="/images/plain-clamshell-card.jpg"
-                  alt="Natural bagasse fiber texture"
-                  fill
-                  className="object-cover"
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#e8eee4] text-[#3e684a] flex items-center justify-center shrink-0 mt-0.5">
+                <Box size={16} className="stroke-[2.2]" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-[#1a201c] leading-snug">
+                  Available Formats
+                </h3>
+                <p className="text-xs text-[#637064] leading-relaxed mt-0.5">
+                  8 × 8″ (205 × 210 mm) & 9 × 9″ (230 × 230 mm)
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-1">
+              <Link
+                href="/products/three-compartment-clamshell-boxes"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 sm:py-3 rounded-full bg-[#173826] text-white text-xs sm:text-[13px] font-semibold hover:bg-[#1f4d34] transition-all duration-200 shadow-sm hover:shadow-md group"
+              >
+                View Product Details
+                <ArrowUpRight
+                  size={14}
+                  className="stroke-[2.5] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
-              </div>
-              <div className="flex items-center gap-1.5 px-1 pb-1">
-                <Leaf size={13} className="text-[#527e5c] shrink-0" />
-                <span className="text-[11px] font-semibold text-[#2b352d] leading-tight">
-                  Natural Bagasse Fiber
-                </span>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
