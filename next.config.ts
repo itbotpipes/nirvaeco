@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   typescript: {
@@ -6,6 +7,11 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
+  },
+  experimental: {
+    turbo: {
+      root: path.resolve(process.cwd(), ".."),
+    },
   },
 };
 

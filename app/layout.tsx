@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SmoothScrollProvider } from "@/components/motion/smooth-scroll-provider";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -55,17 +56,19 @@ const organizationSchema = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body className="font-sans bg-white text-[#1c241e] antialiased">
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
+      <body className="font-sans bg-[#faf8f5] text-[#1c241e] antialiased">
+        <SmoothScrollProvider>
+          <a className="skip-link" href="#main">
+            Skip to content
+          </a>
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

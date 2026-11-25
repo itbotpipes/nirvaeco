@@ -1,8 +1,9 @@
 import { HeroSection } from "@/components/hero-section";
 import { HeroProduct } from "@/components/hero-product";
+import { PinnedProductShowcase } from "@/components/motion/pinned-product-showcase";
 import { StatsSection } from "@/components/stats-section";
 import { AboutNirvaEco } from "@/components/about-nirva-eco";
-import { OtherProducts } from "@/components/other-products";
+import { PinnedHorizontalProducts } from "@/components/motion/pinned-horizontal-products";
 import { FaqsSection } from "@/components/faqs-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { CtaSection } from "@/components/cta-section";
@@ -10,28 +11,31 @@ import { CtaSection } from "@/components/cta-section";
 export default function Home() {
   return (
     <>
-      {/* 01. Hero */}
+      {/* 01. Hero (Static, Clean Presentation with Zero Animation) */}
       <HeroSection />
 
-      {/* 02. Hero Product (3-Compartment Clamshell Flagship) */}
+      {/* 02. Hero Product (3-Compartment Clamshell Flagship Overview) */}
       <HeroProduct />
 
-      {/* 03. Stats / Product Highlights (4 Aligned Columns) */}
+      {/* 03. ONYT-Style Locked-Screen Deep-Dive (Screen Locks for 350vh while 3D Clamshell & Specs Transition) */}
+      <PinnedProductShowcase />
+
+      {/* 04. Stats / Product Highlights (4 Aligned Columns) */}
       <StatsSection />
 
-      {/* 04. About NirvaEco (Story, Values, Pillars) */}
+      {/* 05. About NirvaEco (Story, Values, Word-by-Word Kinetic Reveal) */}
       <AboutNirvaEco />
 
-      {/* 05. Other Products (Product Range Showcase) */}
-      <OtherProducts />
+      {/* 06. ONYT-Style Locked-Screen Horizontal Product Carousel (Screen Locks for 300vh while Cards Glide) */}
+      <PinnedHorizontalProducts />
 
-      {/* 06. FAQs (Frequently Asked Questions Accordion) */}
+      {/* 07. FAQs (Frequently Asked Questions Accordion) */}
       <FaqsSection />
 
-      {/* 07. Testimonials */}
+      {/* 08. Testimonials (Food Business Feedback) */}
       <TestimonialsSection />
 
-      {/* 08. CTA (Packaging Requirements Enquiry) */}
+      {/* 09. CTA (Packaging Requirements Enquiry - Preserved Intact) */}
       <CtaSection />
     </>
   );

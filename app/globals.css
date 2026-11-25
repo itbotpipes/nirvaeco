@@ -22,16 +22,15 @@
   }
 
   html {
-    scroll-behavior: smooth;
     font-family: var(--font-manrope);
-    background-color: #ffffff;
+    background-color: #faf8f5;
     color: var(--charcoal);
   }
 
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-family: var(--font-manrope);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -41,9 +40,14 @@
     font-family: var(--font-manrope);
     letter-spacing: -0.025em;
   }
+
+  ::selection {
+    background-color: #244d34;
+    color: #ffffff;
+  }
 }
 
-/* Base custom classes */
+/* Container */
 .container {
   width: 100%;
   max-width: 1240px;
@@ -74,4 +78,128 @@
 
 .skip-link:focus {
   top: 20px;
+}
+
+/* ========================================================
+   STUDIO INTERACTION & MOTION SYSTEM (Norvalor / ONY style)
+   ======================================================== */
+
+/* Perspective & 3D Cards */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Spring easing shortcuts */
+.ease-out-expo {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ease-in-out-expo {
+  transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+/* Animated continuous badge rotation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+/* Organic breathing / subtle floating */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.8deg);
+  }
+}
+
+.animate-float-subtle {
+  animation: floatSubtle 6s ease-in-out infinite;
+}
+
+/* Floating pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Shimmer wipe effect on card hover */
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 80%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.shimmer-card:hover::after {
+  transform: rotate(25deg) translateY(100%);
+}
+
+/* Smooth text reveal line masking */
+.reveal-line-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-line {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
+}
+
+.reveal-line.is-visible {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Reading Progress Bar at the top of the viewport */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #173826 0%, #3e684a 50%, #739564 100%);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
 }
