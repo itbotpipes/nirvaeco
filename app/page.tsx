@@ -1,41 +1,45 @@
 import { HeroSection } from "@/components/hero-section";
+import { BrandMarquee } from "@/components/motion/brand-marquee";
 import { HeroProduct } from "@/components/hero-product";
-import { PinnedProductShowcase } from "@/components/motion/pinned-product-showcase";
+import { ProtocolEngine } from "@/components/motion/protocol-engine";
 import { StatsSection } from "@/components/stats-section";
 import { AboutNirvaEco } from "@/components/about-nirva-eco";
 import { PinnedHorizontalProducts } from "@/components/motion/pinned-horizontal-products";
-import { FaqsSection } from "@/components/faqs-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { FaqsSection } from "@/components/faqs-section";
 import { CtaSection } from "@/components/cta-section";
 
 export default function Home() {
   return (
     <>
-      {/* 01. Hero (Static, Clean Presentation with Zero Animation) */}
+      {/* 01. Hero (Static, Clean Presentation with Instant High Contrast) */}
       <HeroSection />
 
-      {/* 02. Hero Product (3-Compartment Clamshell Flagship Overview) */}
+      {/* 02. Kinetic Brand Marquee (Dual-Track Infinite Editorial Ticker) */}
+      <BrandMarquee />
+
+      {/* 03. Hero Product (3-Compartment Clamshell Flagship with Format Switcher) */}
       <HeroProduct />
 
-      {/* 03. ONYT-Style Locked-Screen Deep-Dive (Screen Locks for 350vh while 3D Clamshell & Specs Transition) */}
-      <PinnedProductShowcase />
+      {/* 04. The ONYT Protocol Engine (Exact 1-Screen Locked Engine from Video Recording) */}
+      <ProtocolEngine />
 
-      {/* 04. Stats / Product Highlights (4 Aligned Columns) */}
+      {/* 05. Product Highlights & Sourcing Integrity */}
       <StatsSection />
 
-      {/* 05. About NirvaEco (Story, Values, Word-by-Word Kinetic Reveal) */}
+      {/* 06. About NirvaEco (1-Screen Locked Story: Purpose, Vision & Aim) */}
       <AboutNirvaEco />
 
-      {/* 06. ONYT-Style Locked-Screen Horizontal Product Carousel (Screen Locks for 300vh while Cards Glide) */}
+      {/* 07. Pinned Horizontal Product Carousel (1-Screen Locked Carousel) */}
       <PinnedHorizontalProducts />
 
-      {/* 07. FAQs (Frequently Asked Questions Accordion) */}
-      <FaqsSection />
-
-      {/* 08. Testimonials (Food Business Feedback) */}
+      {/* 08. Commercial Kitchen Feedback & Testimonials */}
       <TestimonialsSection />
 
-      {/* 09. CTA (Packaging Requirements Enquiry - Preserved Intact) */}
+      {/* 09. Frequently Asked Questions & Ankleshwar Technical Liaison */}
+      <FaqsSection />
+
+      {/* 10. CTA (Packaging Requirements Enquiry - Preserved Intact) */}
       <CtaSection />
     </>
   );
